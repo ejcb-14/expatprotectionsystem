@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" fill="none">
+  <!-- Shield Background: Dark Navy -->
+  <path d="M10 15C10 15 30 18 50 18C70 18 90 15 90 15V45C90 80 70 100 50 115C30 100 10 80 10 45V15Z" fill="#1B3651"/>
+  
+  <!-- Caduceus Group: White -->
+  <g fill="white">
+    <!-- Center Staff -->
+    <rect x="48.5" y="25" width="3" height="75" rx="1.5" />
+    <circle cx="50" cy="22" r="3.5" />
+
+    <!-- Wings (Stylized for clarity at small size) -->
+    <path d="M50 28C65 22 80 22 88 28C80 32 70 34 50 40V28Z" />
+    <path d="M50 28C35 22 20 22 12 28C20 32 30 34 50 40V28Z" />
+    
+    <!-- Snakes (Intertwining Paths) -->
+    <!-- Drawn as thick strokes for visibility -->
+    <path d="M49 88C55 85 60 80 60 72C60 64 52 60 49 56C46 52 40 48 40 40C40 35 44 32 48 30" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M51 88C45 85 40 80 40 72C40 64 48 60 51 56C54 52 60 48 60 40C60 35 56 32 52 30" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>
