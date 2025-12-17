@@ -2,121 +2,346 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Privacy Policy | ADG Seguros - Gonzalo de la Guardia</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy | ADG Seguros</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #334155;
+      --accent: #0369a1;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+    }
+
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #0f172a;
-      background-color: #f8fafc;
-      line-height: 1.6;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: var(--primary);
+      background-color: var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
     }
-    .page {
-      max-width: 800px; /* Narrower for reading text */
+
+    .container {
+      max-width: 800px;
       margin: 0 auto;
-      padding: 32px 16px 64px;
+      padding: 20px 20px 40px;
     }
+
+    /* Top Navigation Bar */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .back-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+
+    .lang-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .globe-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .back-link:hover, .lang-link:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+
+    /* Header Section */
+    header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .logo-link {
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+
+    .logo-link:hover {
+      opacity: 0.9;
+    }
+
+    .logo {
+      max-width: 100px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* Policy Content */
+    .policy-card {
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      border: 1px solid var(--border);
+    }
+
     h1 {
-      font-size: 2rem;
-      color: #0b1120;
-      margin-bottom: 24px;
+      font-size: 2.1rem;
+      color: var(--primary);
+      margin: 0 0 8px 0;
+      letter-spacing: -0.025em;
+      text-align: center;
     }
+
+    .effective-date {
+      color: var(--secondary);
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+      display: block;
+      border-bottom: 2px solid var(--bg);
+      padding-bottom: 16px;
+      text-align: center;
+    }
+
     h2 {
-      font-size: 1.25rem;
-      margin-top: 32px;
+      font-size: 1.35rem;
+      margin-top: 35px;
       margin-bottom: 12px;
-      color: #0f172a;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 8px;
+      color: var(--primary);
     }
+
     p, li {
-      color: #334155;
+      color: var(--secondary);
       margin-bottom: 16px;
     }
+
     ul {
-      padding-left: 20px;
+      padding-left: 24px;
+      margin-bottom: 24px;
     }
-    .back-link {
-      display: inline-block;
-      margin-bottom: 32px;
-      color: #0369a1;
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .contact-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .social-bar {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .social-icon {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-3px);
+    }
+
+    .phone-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
       text-decoration: none;
-      font-weight: 500;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1.05rem;
     }
-    .back-link:hover {
-      text-decoration: underline;
+
+    .phone-icon {
+      width: 22px;
+      height: 22px;
     }
-    .contact-box {
-      background: #f1f5f9;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 40px;
+
+    /* Footer Disclaimer */
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    .footer-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+
+    .ssrp-logo {
+      max-width: 120px;
+      height: auto;
+      opacity: 0.9;
+    }
+
+    .footer-adg-logo {
+      max-width: 80px;
+      height: auto;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .footer-adg-logo:hover {
+      opacity: 1;
+    }
+
+    .disclaimer {
+      font-size: 0.8rem;
+      color: #64748b;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 640px) {
+      .policy-card {
+        padding: 24px;
+      }
+      h1 {
+        font-size: 1.75rem;
+      }
+      .footer-logos {
+        gap: 16px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <a href="index.html" class="back-link">← Back to Home</a>
-    
-    <h1>Privacy Policy</h1>
-    <p><strong>Effective Date:</strong> October 2023</p>
-    
-    <p>
-      At <strong>ADG Seguros / Gonzalo de la Guardia</strong>, we are committed to protecting the privacy and security of your personal information. This Privacy Policy outlines how we collect, use, disclose, and safeguard your data when you seek insurance advice, request quotes, or utilize our services as an insurance broker in Panama.
-    </p>
 
-    <h2>1. Information We Collect</h2>
-    <p>To provide accurate insurance quotes and manage your policies effectively, we may collect the following types of personal information:</p>
-    <ul>
-      <li><strong>Personal Identification:</strong> Name, date of birth, nationality, and residency status.</li>
-      <li><strong>Contact Information:</strong> Phone number, email address, and physical address.</li>
-      <li><strong>Health Information:</strong> Medical history, pre-existing conditions, and other health-related data necessary for underwriting health and life insurance policies.</li>
-      <li><strong>Financial Information:</strong> Payment details or banking information required for policy issuance (handled securely).</li>
-    </ul>
+  <div class="container">
+    <nav class="top-nav">
+      <a href="index.html" class="back-link">← Back to Home</a>
+      <a href="politica-privacidad.html" class="lang-link">
+        <img src="https://ejcb-14.github.io/adgallassets/globe.png" alt="Language" class="globe-icon">
+        ES
+      </a>
+    </nav>
 
-    <h2>2. How We Use Your Information</h2>
-    <p>We use the information we collect for the following specific purposes:</p>
-    <ul>
-      <li><strong>Quoting and Underwriting:</strong> To negotiate with insurance companies on your behalf and secure the best possible coverage options.</li>
-      <li><strong>Policy Management:</strong> To assist with renewals, updates, and administrative tasks related to your insurance plan.</li>
-      <li><strong>Claims Assistance:</strong> To support you during hospitalizations or claims processes, coordinating directly with hospitals and insurers.</li>
-      <li><strong>Communication:</strong> To respond to your inquiries via WhatsApp, email, or phone.</li>
-    </ul>
+    <header>
+      <a href="https://adgseguros.com.pa" class="logo-link">
+        <img src="https://ejcb-14.github.io/adgallassets/ADGLogo.png" alt="ADG Seguros Logo" class="logo">
+      </a>
+    </header>
 
-    <h2>3. Disclosure of Information</h2>
-    <p>
-      We value your trust and <strong>do not sell, rent, or trade your personal information</strong> to third parties for marketing purposes. However, we may share your information with:
-    </p>
-    <ul>
-      <li><strong>Insurance Companies:</strong> Strictly for the purpose of obtaining quotes, issuing policies, or processing claims.</li>
-      <li><strong>Medical Providers:</strong> When necessary to coordinate coverage or guarantee payment during a medical emergency.</li>
-      <li><strong>Legal Requirements:</strong> If required by Panamanian law or regulation (Superintendencia de Seguros y Reaseguros de Panamá).</li>
-    </ul>
-
-    <h2>4. Data Security</h2>
-    <p>
-      We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. However, please be aware that no method of transmission over the internet or electronic storage is 100% secure.
-    </p>
-
-    <h2>5. Your Rights</h2>
-    <p>As a client, you have the right to:</p>
-    <ul>
-      <li>Request access to the personal data we hold about you.</li>
-      <li>Request corrections to any inaccurate or incomplete information.</li>
-      <li>Request the deletion of your data, subject to legal retention requirements for insurance records.</li>
-    </ul>
-
-    <div class="contact-box">
-      <strong>Contact Us</strong>
-      <p style="margin-bottom: 0;">
-        If you have any questions about this Privacy Policy or how your data is handled, please contact us at:<br /><br />
-        <strong>ADG Seguros</strong><br />
-        Email: <a href="mailto:gdelaguardia@adgseguros.com.pa">gdelaguardia@adgseguros.com.pa</a><br />
-        Phone/WhatsApp: +507 6671-3357
+    <main class="policy-card">
+      <h1>Privacy Policy</h1>
+      <span class="effective-date"><strong>Effective Date:</strong> October 2025</span>
+      
+      <p>
+        At <strong>ADG Seguros / Gonzalo de la Guardia</strong>, we are committed to protecting the privacy and security of your personal information. This Privacy Policy outlines how we collect, use, disclose, and safeguard your data when you seek insurance advice, request quotes, or utilize our services as an insurance broker in Panama.
       </p>
-    </div>
 
+      <h2>1. Information We Collect</h2>
+      <p>To provide accurate insurance quotes and manage your policies effectively, we may collect the following types of personal information:</p>
+      <ul>
+        <li><strong>Personal Identification:</strong> Name, date of birth, nationality, and residency status.</li>
+        <li><strong>Contact Information:</strong> Phone number, email address, and physical address.</li>
+        <li><strong>Health Information:</strong> Medical history, pre-existing conditions, and other health-related data necessary for underwriting health and life insurance policies.</li>
+        <li><strong>Financial Information:</strong> Payment details or banking information required for policy issuance.</li>
+      </ul>
+
+      <h2>2. How We Use Your Information</h2>
+      <p>We use the information we collect for the following specific purposes:</p>
+      <ul>
+        <li><strong>Quoting and Underwriting:</strong> To negotiate with insurance companies on your behalf and secure the best possible coverage options.</li>
+        <li><strong>Policy Management:</strong> To assist with renewals, updates, and administrative tasks related to your insurance plan.</li>
+        <li><strong>Claims Assistance:</strong> To support you during hospitalizations or claims processes, coordinating directly with hospitals and insurers.</li>
+        <li><strong>Communication:</strong> To respond to your inquiries regarding your coverage.</li>
+      </ul>
+
+      <h2>3. Disclosure of Information</h2>
+      <p>
+        We value your trust and <strong>do not sell, rent, or trade your personal information</strong> to third parties for marketing purposes. However, we may share your information with:
+      </p>
+      <ul>
+        <li><strong>Insurance Companies:</strong> Strictly for the purpose of obtaining quotes, issuing policies, or processing claims.</li>
+        <li><strong>Medical Providers:</strong> When necessary to coordinate coverage or guarantee payment during a medical emergency.</li>
+        <li><strong>Legal Requirements:</strong> If required by Panamanian law or regulation.</li>
+      </ul>
+
+      <h2>4. Data Security</h2>
+      <p>
+        We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. We maintain strict confidentiality protocols as required by the industry standards in Panama.
+      </p>
+
+      <h2>5. Your Rights</h2>
+      <p>As a client, you have the right to:</p>
+      <ul>
+        <li>Request access to the personal data we hold about you.</li>
+        <li>Request corrections to any inaccurate or incomplete information.</li>
+        <li>Request the deletion of your data, subject to legal retention requirements for insurance records.</li>
+      </ul>
+
+      <section class="contact-section">
+        <span class="contact-title">Contact Us</span>
+        
+        <div class="social-bar">
+          <a href="mailto:info@adgseguros.com.pa" title="Email Us">
+            <img src="https://ejcb-14.github.io/adgallassets/mail.png" alt="Email" class="social-icon">
+          </a>
+          <a href="https://www.instagram.com/adgseguros/" target="_blank" title="Instagram">
+            <img src="https://ejcb-14.github.io/adgallassets/instagram.png" alt="Instagram" class="social-icon">
+          </a>
+          <a href="https://www.linkedin.com/company/adgseguros" target="_blank" title="LinkedIn">
+            <img src="https://ejcb-14.github.io/adgallassets/linkedin.png" alt="LinkedIn" class="social-icon">
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100092326693168" target="_blank" title="Facebook">
+            <img src="https://ejcb-14.github.io/adgallassets/facebook.png" alt="Facebook" class="social-icon">
+          </a>
+        </div>
+
+        <a href="tel:+5073935530" class="phone-container">
+          <img src="https://ejcb-14.github.io/adgallassets/phone.png" alt="Phone" class="phone-icon">
+          <span>+507 393-5530</span>
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-logos">
+        <img src="https://ejcb-14.github.io/adgallassets/SSRP.png" alt="SSRP Logo" class="ssrp-logo">
+        <a href="https://adgseguros.com.pa">
+          <img src="https://ejcb-14.github.io/adgallassets/ADGLogo.png" alt="ADG Seguros Logo" class="footer-adg-logo">
+        </a>
+      </div>
+      <p class="disclaimer">
+        Regulated and supervised by the Superintendency of Insurance and Reinsurance of Panama. | License PJ 918
+      </p>
+    </footer>
   </div>
+
 </body>
 </html>
