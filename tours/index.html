@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Pixel Code (same pixel as the home page) -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1492897465526674');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1492897465526674&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hospital Tour: Hospiten Paitilla | Expat Protection System</title>
+  <meta name="description" content="Book a seat on a guided tour of Hospiten Paitilla for English-speaking expats in Panama, organized by Expat Protection System." />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hospital Tour: Hospiten Paitilla">
+  <meta property="og:description" content="A guided tour of Hospiten Paitilla in English for expats in Panama, with a short Q&A on health insurance at the end.">
+  <meta property="og:image" content="https://ejcb-14.github.io/adgallassets/eps-logo-crop.png">
+  <meta property="og:url" content="https://expatprotectionsystem.com/tours/">
+  <link rel="icon" href="https://ejcb-14.github.io/adgallassets/eps-favicon.png" type="image/png" />
+  <style>
+    :root {
+      --navy: #183348; --ink: #0f172a; --text: #333333; --muted: #475569; --soft: #64748b;
+      --line: #e2e8f0; --bg: #f8fafc; --box: #e0f2fe; --blue: #0369a1; --red: #c53030;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+           color: var(--ink); background: var(--bg); line-height: 1.6; }
+    .page { max-width: 760px; margin: 0 auto; padding: 24px 16px 56px; }
+    .site-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+    .site-header img { width: 170px; height: auto; display: block; }
+    .site-header a.home { font-size: 0.9rem; color: var(--muted); text-decoration: none; }
+    .badge { display: inline-block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
+             background: var(--box); color: var(--blue); padding: 4px 10px; border-radius: 999px; margin: 20px 0 14px; }
+    h1 { font-size: 2.1rem; line-height: 1.2; margin: 0 0 12px; color: #0b1120; }
+    h2 { font-size: 1.25rem; margin: 0 0 12px; color: #020617; }
+    p { margin: 0 0 10px; }
+    .lead { font-size: 1.05rem; color: var(--muted); max-width: 640px; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 20px 0 8px; }
+    .fact { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 0.92rem; }
+    .fact b { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--soft); font-weight: 600; }
+    .card { background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--navy); border-radius: 16px;
+            padding: 24px 22px; margin-top: 28px; }
+    .dates { display: grid; gap: 10px; margin-bottom: 18px; }
+    .date { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+            border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; cursor: pointer; background: #fff; }
+    .date input { position: absolute; opacity: 0; pointer-events: none; }
+    .date .when { font-weight: 600; color: var(--navy); }
+    .date .seats { font-size: 0.85rem; color: var(--soft); white-space: nowrap; }
+    .date.selected { border-color: var(--navy); background: var(--box); box-shadow: 0 0 0 1px var(--navy) inset; }
+    .date.full { cursor: default; opacity: 0.55; }
+    .date.full .seats { color: var(--red); font-weight: 600; }
+    .date:focus-within { outline: 2px solid var(--blue); outline-offset: 2px; }
+    label.field { display: block; font-size: 0.9rem; font-weight: 600; margin: 14px 0 6px; }
+    .hint { font-weight: 400; color: var(--soft); }
+    input[type=text], input[type=email], input[type=tel] {
+      width: 100%; font: inherit; font-size: 1rem; padding: 11px 12px; border: 1px solid #cbd5e1; border-radius: 10px; background: #fff; }
+    input:focus { outline: 2px solid var(--blue); outline-offset: 1px; border-color: var(--blue); }
+    .row-inline { display: flex; gap: 18px; margin-top: 4px; }
+    .row-inline label { font-weight: 400; display: flex; align-items: center; gap: 6px; }
+    .consent { display: flex; gap: 10px; align-items: flex-start; margin: 20px 0 6px; font-size: 0.9rem; color: var(--muted); }
+    .consent input { margin-top: 4px; width: 18px; height: 18px; flex: none; }
+    .consent a { color: var(--blue); }
+    .btn { font: inherit; font-weight: 700; font-size: 1rem; border: 1px solid var(--navy); background: var(--navy); color: #fff;
+           border-radius: 8px; padding: 12px 22px; cursor: pointer; margin-top: 14px; }
+    .btn:hover { background: #0f2233; }
+    .btn[disabled] { opacity: 0.6; cursor: default; }
+    .btn.danger { background: var(--red); border-color: var(--red); }
+    .btn.danger:hover { background: #9b2c2c; }
+    .msg { display: none; margin-top: 14px; padding: 12px 14px; border-radius: 10px; font-size: 0.95rem; }
+    .msg.error { display: block; background: #fff5f5; color: #9b2c2c; border: 1px solid #fed7d7; }
+    .msg.ok { display: block; background: var(--box); color: var(--navy); border-left: 4px solid var(--navy); }
+    .hidden { display: none !important; }
+    .muted { color: var(--soft); font-size: 0.9rem; }
+    .done h2 { color: var(--navy); }
+    .hp { position: absolute; left: -5000px; width: 1px; height: 1px; overflow: hidden; }
+    .contact { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid #bce3fd;
+               border-radius: 12px; background: #fff; text-align: center; font-size: 0.95rem; }
+    .contact > div { padding: 16px; }
+    .contact > div + div { border-left: 1px solid #bce3fd; }
+    .contact a { color: var(--ink); text-decoration: none; }
+    .contact .mail { color: var(--navy); word-break: break-all; }
+    .contact .icons { display: flex; justify-content: center; gap: 12px; margin-top: 6px; }
+    .contact .icons img { width: 20px; height: 20px; display: block; }
+    .contact .adg { width: 90px; display: block; margin: 0 auto 10px; }
+    .site-footer { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); text-align: center; }
+    .site-footer .reg { font-size: 0.9rem; color: var(--blue); margin: 0 0 12px; }
+    .site-footer img { width: 280px; max-width: 100%; height: auto; }
+    .copyright { margin-top: 18px; font-size: 0.75rem; color: #94a3b8; }
+    .copyright a { color: inherit; }
+    @media (max-width: 560px) {
+      h1 { font-size: 1.7rem; }
+      .site-header img { width: 140px; }
+      .site-header a.home { display: none; }
+      .card { padding: 20px 16px; }
+      .contact { grid-template-columns: 1fr; }
+      .contact > div + div { border-left: 0; border-top: 1px solid #bce3fd; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <a href="/"><img src="https://ejcb-14.github.io/adgallassets/eps-logo-crop.png" alt="Expat Protection System" /></a>
+      <a class="home" href="/">expatprotectionsystem.com</a>
+    </header>
+
+    <!-- ============ BOOKING VIEW ============ -->
+    <main id="bookView">
+      <div class="badge">Hospital tour · Panama City</div>
+      <h1>Get to know Hospiten Paitilla before you ever need it</h1>
+      <p class="lead">
+        Join a small guided tour of Hospiten Paitilla for English-speaking expats, led by the hospital's International
+        Department team. You will see how the hospital works for patients like you, and we finish with a short Q&amp;A on
+        health insurance in Panama.
+      </p>
+      <div class="facts">
+        <div class="fact"><b>Length</b>About 75 minutes</div>
+        <div class="fact"><b>Language</b>English</div>
+        <div class="fact"><b>Group size</b>Up to 5 guests</div>
+        <div class="fact"><b>Meet at</b>Main lobby, 8:45 a.m.</div>
+      </div>
+
+      <section class="card" id="formCard">
+        <h2 id="formTitle">Choose a date</h2>
+        <div id="datesBox" class="dates" role="radiogroup" aria-labelledby="formTitle">
+          <p class="muted" id="datesLoading">Loading available dates...</p>
+        </div>
+        <div id="waitlistNote" class="msg ok hidden">
+          All upcoming dates are full. Leave your details below and we will write to you as soon as a seat opens up
+          or a new date is added.
+        </div>
+
+        <form id="bookForm" novalidate>
+          <label class="field" for="name">Full name</label>
+          <input type="text" id="name" name="name" autocomplete="name" maxlength="80" required />
+
+          <label class="field" for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" maxlength="120" required />
+
+          <label class="field" for="whatsapp">WhatsApp <span class="hint">(with country code, e.g. +507 6000-0000)</span></label>
+          <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" maxlength="30" required />
+
+          <label class="field">Will a companion join you? <span class="hint">(one person max)</span></label>
+          <div class="row-inline">
+            <label><input type="radio" name="companion" value="no" checked /> No</label>
+            <label><input type="radio" name="companion" value="yes" /> Yes</label>
+          </div>
+          <div id="companionBox" class="hidden">
+            <label class="field" for="companionName">Companion's full name</label>
+            <input type="text" id="companionName" name="companionName" maxlength="80" />
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" id="consent" name="consent" required />
+            <span>I agree that Expat Protection System and ADG Seguros may share my name, email and phone number with
+              Hospiten Paitilla to register me for this tour and its membership program. See our
+              <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>.</span>
+          </label>
+
+          <button type="submit" class="btn" id="submitBtn">Book my seat</button>
+          <div id="formMsg" class="msg" role="alert"></div>
+        </form>
+      </section>
+
+      <section class="card done hidden" id="doneCard">
+        <h2 id="doneTitle">You are booked</h2>
+        <p id="doneText"></p>
+        <p class="muted">Check your inbox (and spam folder) for the confirmation email from tours@expatprotectionsystem.com.</p>
+      </section>
+    </main>
+
+    <!-- ============ CANCEL VIEW (?cancel=token) ============ -->
+    <main id="cancelView" class="hidden">
+      <div class="badge">Hospital tour · Hospiten Paitilla</div>
+      <section class="card">
+        <div id="cancelLoading" class="muted">Loading your booking...</div>
+        <div id="cancelAsk" class="hidden">
+          <h2 id="cancelHello"></h2>
+          <p>Do you want to cancel your seat for the <b>Hospiten Paitilla hospital tour</b>? Your seat will be freed for someone else.</p>
+          <div class="msg ok" style="display:block"><span class="muted">Date</span><br><b id="cancelDate"></b></div>
+          <button class="btn danger" id="cancelBtn">Yes, cancel my booking</button>
+          <p class="muted" style="margin-top:12px">Prefer a different date? Cancel here, then <a href="/tours/" style="color:var(--blue)">book again</a>.</p>
+          <div id="cancelMsg" class="msg" role="alert"></div>
+        </div>
+        <div id="cancelDone" class="hidden">
+          <h2 id="cancelDoneTitle">Your booking is cancelled</h2>
+          <p id="cancelDoneText"></p>
+          <p>If you would like a different date, you can <a href="/tours/" style="color:var(--blue)">book again here</a>.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ CONTACT + FOOTER ============ -->
+    <div class="contact">
+      <div>
+        <b>Contact us</b><br>
+        <a href="tel:+5073935530">+507 393-5530</a><br>
+        <b style="display:block;margin-top:10px">Gonzalo de la Guardia</b>
+        <a href="https://wa.me/50766713357" target="_blank">WhatsApp +507 6671-3357</a><br>
+        <a class="mail" href="mailto:gdelaguardia@adgseguros.com.pa">gdelaguardia@adgseguros.com.pa</a>
+      </div>
+      <div>
+        <a href="https://adgseguros.com.pa"><img class="adg" src="https://ejcb-14.github.io/adgallassets/ADGLogo-Crop.png" alt="ADG Seguros"></a>
+        <b>Follow us</b>
+        <div class="icons">
+          <a href="https://www.facebook.com/profile.php?id=100092326693168" target="_blank"><img src="https://ejcb-14.github.io/adgallassets/facebook.png" alt="Facebook"></a>
+          <a href="https://www.instagram.com/adgseguros/" target="_blank"><img src="https://ejcb-14.github.io/adgallassets/instagram.png" alt="Instagram"></a>
+          <a href="https://www.linkedin.com/company/adgseguros" target="_blank"><img src="https://ejcb-14.github.io/adgallassets/linkedin.png" alt="LinkedIn"></a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <p class="reg"><strong>Expat Protection System is a service of ADG Seguros</strong></p>
+      <img src="https://ejcb-14.github.io/adgallassets/ADG-regulado-PJ918.png"
+           alt="Regulated and supervised by the Superintendency of Insurance and Reinsurance of Panama. License PJ 918." />
+      <div class="copyright">© 2026 Gonzalo de la Guardia / ADG Seguros · <a href="/privacy-policy.html">Privacy Policy</a></div>
+    </footer>
+  </div>
+
+  <script>
+  // Apps Script Web app URL (Config > WEBAPP_URL in the EPS Tours sheet).
+  var API_URL = 'PASTE_WEBAPP_URL_HERE';
+
+  (function () {
+    var $ = function (id) { return document.getElementById(id); };
+    var params = new URLSearchParams(location.search);
+    var selected = null, waitlist = false;
+
+    function api(method, body, query) {
+      var url = API_URL + (query ? '?' + query : '');
+      var opts = method === 'POST' ? { method: 'POST', body: JSON.stringify(body) } : {};
+      return fetch(url, opts).then(function (r) { return r.json(); });
+    }
+    function show(el, on) { el.classList.toggle('hidden', !on); }
+    function setMsg(el, text, kind) { el.textContent = text || ''; el.className = 'msg' + (text ? ' ' + kind : ''); }
+
+    // ---------- Cancel view ----------
+    if (params.get('cancel')) {
+      show($('bookView'), false); show($('cancelView'), true);
+      var token = params.get('cancel');
+      api('GET', null, 'action=booking&token=' + encodeURIComponent(token)).then(function (r) {
+        show($('cancelLoading'), false);
+        if (!r.ok) { show($('cancelDone'), true); $('cancelDoneTitle').textContent = 'Booking not found';
+          $('cancelDoneText').textContent = 'This cancel link is not valid. If you need help, reply to your confirmation email.'; return; }
+        if (r.status === 'Cancelled') { show($('cancelDone'), true); $('cancelDoneTitle').textContent = 'Already cancelled';
+          $('cancelDoneText').textContent = 'Your booking for ' + r.date + ' was already cancelled.'; return; }
+        $('cancelHello').textContent = 'Hi ' + r.firstName + ',';
+        $('cancelDate').textContent = r.date;
+        show($('cancelAsk'), true);
+      }).catch(function () { $('cancelLoading').textContent = 'We could not load your booking. Please try again in a moment.'; });
+
+      $('cancelBtn').addEventListener('click', function () {
+        var b = this; b.disabled = true; b.textContent = 'Cancelling...';
+        api('POST', { action: 'cancel', token: token }).then(function (r) {
+          if (r.ok) { show($('cancelAsk'), false); show($('cancelDone'), true); $('cancelDoneText').textContent = r.message; }
+          else { b.disabled = false; b.textContent = 'Yes, cancel my booking'; setMsg($('cancelMsg'), r.error, 'error'); }
+        }).catch(function () { b.disabled = false; b.textContent = 'Yes, cancel my booking';
+          setMsg($('cancelMsg'), 'Something went wrong. Please try again.', 'error'); });
+      });
+      return;
+    }
+
+    // ---------- Booking view ----------
+    function renderDates(r) {
+      var box = $('datesBox'); box.innerHTML = '';
+      waitlist = r.allFull;
+      if (waitlist) {
+        show(box, false); show($('waitlistNote'), true);
+        $('formTitle').textContent = 'Join the waitlist';
+        $('submitBtn').textContent = 'Join the waitlist';
+        return;
+      }
+      r.dates.forEach(function (d) {
+        var lab = document.createElement('label');
+        lab.className = 'date' + (d.open ? '' : ' full');
+        var seats = d.open ? (d.seatsLeft + (d.seatsLeft === 1 ? ' seat left' : ' seats left')) : 'Full';
+        lab.innerHTML = '<input type="radio" name="date"' + (d.open ? '' : ' disabled') + '>' +
+          '<span class="when"></span><span class="seats"></span>';
+        lab.querySelector('.when').textContent = d.label + ', ' + d.time;
+        lab.querySelector('.seats').textContent = seats;
+        var input = lab.querySelector('input'); input.value = d.id;
+        input.addEventListener('change', function () {
+          selected = d.id;
+          [].forEach.call(box.children, function (c) { c.classList.remove('selected'); });
+          lab.classList.add('selected');
+        });
+        box.appendChild(lab);
+      });
+    }
+    function loadDates() {
+      return api('GET', null, 'action=dates').then(function (r) {
+        if (!r.ok) throw new Error();
+        selected = null; renderDates(r);
+      }).catch(function () {
+        $('datesBox').innerHTML = '<p class="muted">We could not load the dates right now. Please refresh the page in a moment.</p>';
+      });
+    }
+    loadDates();
+
+    document.querySelectorAll('input[name=companion]').forEach(function (r) {
+      r.addEventListener('change', function () { show($('companionBox'), this.value === 'yes' && this.checked); });
+    });
+
+    $('bookForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = this, msg = $('formMsg');
+      var data = {
+        action: waitlist ? 'waitlist' : 'book',
+        dateId: selected,
+        name: f.name.value.trim(), email: f.email.value.trim(), whatsapp: f.whatsapp.value.trim(),
+        companion: f.querySelector('input[name=companion]:checked').value === 'yes',
+        companionName: f.companionName.value.trim(),
+        consent: $('consent').checked, website: f.website.value
+      };
+      if (!waitlist && !selected) return setMsg(msg, 'Please choose a date.', 'error');
+      if (!data.name || !data.email || !data.whatsapp) return setMsg(msg, 'Please fill in your name, email and WhatsApp.', 'error');
+      if (data.companion && !data.companionName) return setMsg(msg, "Please enter your companion's name.", 'error');
+      if (!data.consent) return setMsg(msg, 'Please accept the consent checkbox to continue.', 'error');
+
+      var btn = $('submitBtn'), label = btn.textContent;
+      btn.disabled = true; btn.textContent = waitlist ? 'Sending...' : 'Booking...'; setMsg(msg, '');
+      api('POST', data).then(function (r) {
+        btn.disabled = false; btn.textContent = label;
+        if (r.ok) {
+          show($('formCard'), false); show($('doneCard'), true);
+          $('doneTitle').textContent = waitlist ? 'You are on the waitlist' : 'You are booked';
+          $('doneText').textContent = r.message;
+          if (window.fbq) fbq('track', 'Lead', { content_name: waitlist ? 'Hospiten tour waitlist' : 'Hospiten tour booking' });
+          $('doneCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          setMsg(msg, r.error || 'Something went wrong. Please try again.', 'error');
+          if (r.refresh) loadDates();
+        }
+      }).catch(function () {
+        btn.disabled = false; btn.textContent = label;
+        setMsg(msg, 'Something went wrong. Please try again, or write to tours@expatprotectionsystem.com.', 'error');
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
