@@ -34,8 +34,9 @@
     .perk { display: inline-flex; align-items: center; gap: 10px; margin: 8px auto 4px; padding: 10px 16px;
             background: #e8f5ee; border: 1px solid #b7e0c8; border-radius: 12px; color: #1e5a3c; font-size: 0.98rem; text-align: left; }
     .perk b { color: #1e7d4f; }
-    .perk .ic { flex: none; width: 26px; height: 26px; border-radius: 50%; background: #1e7d4f; color: #fff;
-                display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.95rem; }
+    .perk .ic { flex: none; width: 30px; height: 30px; border-radius: 8px; background: #1e7d4f;
+                display: inline-flex; align-items: center; justify-content: center; }
+    .perk .ic svg { width: 20px; height: 20px; display: block; }
     .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 20px 0 8px; }
     .fact { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 0.92rem; }
     .fact b { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--soft); font-weight: 600; }
@@ -120,8 +121,9 @@
           Department team. You will see how the hospital works for patients like you, and we finish with a short Q&amp;A on
           health insurance in Panama.
         </p>
-        <div class="perk"><span class="ic" aria-hidden="true">+</span>
-          <span>Become a <b>Hospiten Paitilla member for free</b> and get a <b>free medical checkup</b>.</span></div>
+        <div class="perk"><span class="ic" aria-hidden="true"><svg viewBox="0 0 20 20"><path fill="#fff"
+          d="M7 1.5h6v5.5h5.5v6H13v5.5H7V13H1.5V7H7z"/></svg></span>
+          <span>You'll become a <b>Hospiten Paitilla international member for free</b> and get a <b>free medical checkup</b> as a reward.</span></div>
       </div>
       <div class="facts">
         <div class="fact"><b>Length</b>About 75 minutes</div>
@@ -136,8 +138,11 @@
           <p class="muted" id="datesLoading">Loading available dates...</p>
         </div>
         <div id="waitlistNote" class="msg ok hidden">
-          All upcoming dates are full. Leave your details below and we will write to you as soon as a seat opens up
-          or a new date is added.
+          All upcoming dates are full. Join the waitlist and we will email you in case more dates open.
+          Further dates are not guaranteed.
+        </div>
+        <div id="waitlistHint" class="muted hidden" style="margin:-6px 0 14px">
+          We will email you in case more dates open. Further dates are not guaranteed.
         </div>
 
         <form id="bookForm" novalidate>
@@ -179,6 +184,7 @@
       <section class="card done hidden" id="doneCard">
         <h2 id="doneTitle">You are booked</h2>
         <p id="doneText"></p>
+        <p class="muted hidden" id="doneWaitNote">Further dates are not guaranteed.</p>
         <p class="muted">Check your inbox (and spam folder) for the confirmation email from tours@expatprotectionsystem.com.</p>
       </section>
     </main>
@@ -267,6 +273,7 @@
       waitlist = wl;
       $('formTitle').textContent = allFull ? 'Join the waitlist' : 'Choose a date';
       $('submitBtn').textContent = wl ? 'Join the waitlist' : 'Book my seat';
+      show($('waitlistHint'), wl && !allFull);
     }
 
     function api(method, body, query) {
@@ -356,7 +363,7 @@
       var wl = document.createElement('label');
       wl.className = 'date wl';
       wl.innerHTML = '<input type="radio" name="date" value="waitlist"><span class="when">None of these dates work for me</span>' +
-                     '<span class="seats">Join the waitlist</span>';
+                     '<span class="seats">Waitlist, in case more dates open</span>';
       wl.querySelector('input').addEventListener('change', function () {
         selected = null; setMode(true);
         [].forEach.call(box.children, function (c) { c.classList.remove('selected'); });
@@ -404,6 +411,7 @@
           show($('formCard'), false); show($('doneCard'), true);
           $('doneTitle').textContent = waitlist ? 'You are on the waitlist!' : 'You are booked!';
           $('doneCard').classList.toggle('booked', !waitlist);
+          show($('doneWaitNote'), waitlist);
           $('doneText').textContent = r.message;
           $('doneCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
