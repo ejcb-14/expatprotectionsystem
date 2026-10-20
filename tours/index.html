@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta Pixel Code (same pixel as the home page) -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1492897465526674');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1492897465526674&ev=PageView&noscript=1" /></noscript>
-  <!-- End Meta Pixel Code -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hospital Tour: Hospiten Paitilla | Expat Protection System</title>
@@ -84,7 +68,9 @@
     .msg.ok { display: block; background: var(--box); color: var(--navy); border-left: 4px solid var(--navy); }
     .hidden { display: none !important; }
     .muted { color: var(--soft); font-size: 0.9rem; }
-    .done h2 { color: var(--navy); }
+    .done h2 { margin: -24px -22px 18px; padding: 16px 22px; border-radius: 12px 12px 0 0; color: #fff; background: var(--navy); }
+    .done.booked h2 { background: #1e7d4f; }
+    .done { border-top: 0; }
     .hp { position: absolute; left: -5000px; width: 1px; height: 1px; overflow: hidden; }
     .contact { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid #bce3fd;
                border-radius: 12px; background: #fff; text-align: center; font-size: 0.95rem; }
@@ -207,6 +193,29 @@
       </section>
     </main>
 
+    <!-- ============ LEAVE WAITLIST VIEW (?leave=token) ============ -->
+    <main id="leaveView" class="hidden">
+      <div class="badge">Hospital tour · Hospiten Paitilla</div>
+      <section class="card">
+        <div id="leaveLoading" class="muted">Loading...</div>
+        <div id="leaveAsk" class="hidden">
+          <h2 id="leaveHello"></h2>
+          <p>Do you want to be removed from the waitlist for the <b>Hospiten Paitilla hospital tour</b>?
+             You will stop getting emails about new dates.</p>
+          <p class="muted">If you just can't make the dates we have now, there is nothing to do: you stay on the waitlist
+             and we will write again when another date opens.</p>
+          <button class="btn danger" id="leaveBtn">Remove me from the waitlist</button>
+          <p class="muted" style="margin-top:12px">Or <a href="/tours/" style="color:var(--blue)">see the open dates</a>.</p>
+          <div id="leaveMsg" class="msg" role="alert"></div>
+        </div>
+        <div id="leaveDone" class="hidden">
+          <h2 id="leaveDoneTitle">You have been removed</h2>
+          <p id="leaveDoneText"></p>
+          <p>Changed your mind? You can <a href="/tours/" style="color:var(--blue)">book a date here</a> at any time.</p>
+        </div>
+      </section>
+    </main>
+
     <!-- ============ CONTACT + FOOTER ============ -->
     <div class="contact">
       <div>
@@ -256,6 +265,31 @@
     }
     function show(el, on) { el.classList.toggle('hidden', !on); }
     function setMsg(el, text, kind) { el.textContent = text || ''; el.className = 'msg' + (text ? ' ' + kind : ''); }
+
+    // ---------- Leave waitlist view ----------
+    if (params.get('leave')) {
+      show($('bookView'), false); show($('leaveView'), true);
+      var lt = params.get('leave');
+      api('GET', null, 'action=waitlist&token=' + encodeURIComponent(lt)).then(function (r) {
+        show($('leaveLoading'), false);
+        if (!r.ok) { show($('leaveDone'), true); $('leaveDoneTitle').textContent = 'Entry not found';
+          $('leaveDoneText').textContent = 'This link is not valid. If you need help, reply to any of our emails.'; return; }
+        if (r.status !== 'Waiting') { show($('leaveDone'), true); $('leaveDoneTitle').textContent = 'Already removed';
+          $('leaveDoneText').textContent = 'You are no longer on the waitlist.'; return; }
+        $('leaveHello').textContent = 'Hi ' + r.firstName + ',';
+        show($('leaveAsk'), true);
+      }).catch(function () { $('leaveLoading').textContent = 'We could not load this page. Please try again in a moment.'; });
+
+      $('leaveBtn').addEventListener('click', function () {
+        var b = this; b.disabled = true; b.textContent = 'Removing...';
+        api('POST', { action: 'leave', token: lt }).then(function (r) {
+          if (r.ok) { show($('leaveAsk'), false); show($('leaveDone'), true); $('leaveDoneText').textContent = r.message; }
+          else { b.disabled = false; b.textContent = 'Remove me from the waitlist'; setMsg($('leaveMsg'), r.error, 'error'); }
+        }).catch(function () { b.disabled = false; b.textContent = 'Remove me from the waitlist';
+          setMsg($('leaveMsg'), 'Something went wrong. Please try again.', 'error'); });
+      });
+      return;
+    }
 
     // ---------- Cancel view ----------
     if (params.get('cancel')) {
@@ -357,9 +391,9 @@
         btn.disabled = false; btn.textContent = label;
         if (r.ok) {
           show($('formCard'), false); show($('doneCard'), true);
-          $('doneTitle').textContent = waitlist ? 'You are on the waitlist' : 'You are booked';
+          $('doneTitle').textContent = waitlist ? 'You are on the waitlist!' : 'You are booked!';
+          $('doneCard').classList.toggle('booked', !waitlist);
           $('doneText').textContent = r.message;
-          if (window.fbq) fbq('track', 'Lead', { content_name: waitlist ? 'Hospiten tour waitlist' : 'Hospiten tour booking' });
           $('doneCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
           setMsg(msg, r.error || 'Something went wrong. Please try again.', 'error');
