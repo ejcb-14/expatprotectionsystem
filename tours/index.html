@@ -29,6 +29,13 @@
     h2 { font-size: 1.25rem; margin: 0 0 12px; color: #020617; }
     p { margin: 0 0 10px; }
     .lead { font-size: 1.05rem; color: var(--muted); max-width: 640px; }
+    .hero { text-align: center; }
+    .hero .lead { margin: 0 auto 10px; }
+    .perk { display: inline-flex; align-items: center; gap: 10px; margin: 8px auto 4px; padding: 10px 16px;
+            background: #e8f5ee; border: 1px solid #b7e0c8; border-radius: 12px; color: #1e5a3c; font-size: 0.98rem; text-align: left; }
+    .perk b { color: #1e7d4f; }
+    .perk .ic { flex: none; width: 26px; height: 26px; border-radius: 50%; background: #1e7d4f; color: #fff;
+                display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.95rem; }
     .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 20px 0 8px; }
     .fact { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 0.92rem; }
     .fact b { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--soft); font-weight: 600; }
@@ -105,13 +112,17 @@
 
     <!-- ============ BOOKING VIEW ============ -->
     <main id="bookView">
-      <div class="badge">Hospital tour · Panama City</div>
-      <h1>Get to know Hospiten Paitilla before you ever need it</h1>
-      <p class="lead">
-        Join a small guided tour of Hospiten Paitilla for English-speaking expats, led by the hospital's International
-        Department team. You will see how the hospital works for patients like you, and we finish with a short Q&amp;A on
-        health insurance in Panama.
-      </p>
+      <div class="hero">
+        <div class="badge">Hospital tour · Panama City</div>
+        <h1>Get to know Hospiten Paitilla before you ever need it</h1>
+        <p class="lead">
+          Join a small guided tour of Hospiten Paitilla for English-speaking expats, led by the hospital's International
+          Department team. You will see how the hospital works for patients like you, and we finish with a short Q&amp;A on
+          health insurance in Panama.
+        </p>
+        <div class="perk"><span class="ic" aria-hidden="true">+</span>
+          <span>Become a <b>Hospiten Paitilla member for free</b> and get a <b>free medical checkup</b>.</span></div>
+      </div>
       <div class="facts">
         <div class="fact"><b>Length</b>About 75 minutes</div>
         <div class="fact"><b>Language</b>English</div>
