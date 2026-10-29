@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hospital Tour: Hospiten Paitilla | Expat Protection System</title>
-  <meta name="description" content="Book a seat on a guided tour of Hospiten Paitilla for English-speaking expats in Panama, organized by Expat Protection System." />
+  <title>Coffee with Hospiten Paitilla | Expat Protection System</title>
+  <meta name="description" content="Coffee with Hospiten Paitilla: book a seat on a small guided tour of the hospital for English-speaking expats in Panama, organized by Expat Protection System." />
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Hospital Tour: Hospiten Paitilla">
+  <meta property="og:title" content="Coffee with Hospiten Paitilla">
   <meta property="og:description" content="A guided tour of Hospiten Paitilla in English for expats in Panama, with a short Q&A on health insurance at the end.">
   <meta property="og:image" content="https://ejcb-14.github.io/adgallassets/eps-logo-crop.png">
   <meta property="og:url" content="https://expatprotectionsystem.com/tours/">
@@ -51,6 +51,9 @@
     .date.selected { border-color: var(--navy); background: var(--box); box-shadow: 0 0 0 1px var(--navy) inset; }
     .date.full { cursor: default; opacity: 0.55; }
     .date.full .seats { color: var(--red); font-weight: 600; }
+    .date.almost .seats { color: #b45309; font-weight: 600; }
+    .date.available .seats { color: #1e7d4f; font-weight: 600; }
+    .tagline { margin: 14px 0 0; font-weight: 700; color: var(--navy); letter-spacing: 0.01em; }
     .date:focus-within { outline: 2px solid var(--blue); outline-offset: 2px; }
     .date.wl { border-style: dashed; }
     .date.wl .when { font-weight: 500; color: var(--muted); }
@@ -115,7 +118,7 @@
     <!-- ============ BOOKING VIEW ============ -->
     <main id="bookView">
       <div class="hero">
-        <div class="badge">Hospital tour · Panama City</div>
+        <div class="badge">Coffee with Hospiten Paitilla · Panama City</div>
         <h1>Get to know Hospiten Paitilla before you ever need it</h1>
         <p class="lead">
           Join a small guided tour of Hospiten Paitilla for English-speaking expats, led by the hospital's International
@@ -124,12 +127,13 @@
         </p>
         <div class="perk"><span class="ic" aria-hidden="true"><svg viewBox="0 0 20 20"><path fill="#fff"
           d="M7 1.5h6v5.5h5.5v6H13v5.5H7V13H1.5V7H7z"/></svg></span>
-          <span>You'll become a <b>Hospiten Paitilla international member for free</b> and get a <b>free medical checkup</b> as a reward.</span></div>
+          <span>You'll become a <b>Hospiten Paitilla international member for free</b>.</span></div>
+        <p class="tagline">No sales pitch. Just clear answers.</p>
       </div>
       <div class="facts">
         <div class="fact"><b>Length</b>About 75 minutes</div>
         <div class="fact"><b>Language</b>English</div>
-        <div class="fact"><b>Group size</b>Up to 5 guests</div>
+        <div class="fact"><b>Group size</b>Up to 8 guests</div>
         <div class="fact"><b>Meet at</b>Main lobby, 8:45 a.m.</div>
       </div>
 
@@ -155,16 +159,6 @@
 
           <label class="field" for="whatsapp">WhatsApp <span class="hint">(with country code, e.g. +507 6000-0000)</span></label>
           <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" maxlength="30" required />
-
-          <label class="field">Will a companion join you? <span class="hint">(one person max)</span></label>
-          <div class="row-inline">
-            <label><input type="radio" name="companion" value="no" checked /> No</label>
-            <label><input type="radio" name="companion" value="yes" /> Yes</label>
-          </div>
-          <div id="companionBox" class="hidden">
-            <label class="field" for="companionName">Companion's full name</label>
-            <input type="text" id="companionName" name="companionName" maxlength="80" />
-          </div>
 
           <div class="hp" aria-hidden="true">
             <label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
@@ -192,12 +186,12 @@
 
     <!-- ============ CANCEL VIEW (?cancel=token) ============ -->
     <main id="cancelView" class="hidden">
-      <div class="badge">Hospital tour · Hospiten Paitilla</div>
+      <div class="badge">Coffee with Hospiten Paitilla</div>
       <section class="card">
         <div id="cancelLoading" class="muted">Loading your booking...</div>
         <div id="cancelAsk" class="hidden">
           <h2 id="cancelHello"></h2>
-          <p>Do you want to cancel your seat for the <b>Hospiten Paitilla hospital tour</b>? Your seat will be freed for someone else.</p>
+          <p>Do you want to cancel your seat for <b>Coffee with Hospiten Paitilla</b>? Your seat will be freed for someone else.</p>
           <div class="msg ok" style="display:block"><span class="muted">Date</span><br><b id="cancelDate"></b></div>
           <button class="btn danger" id="cancelBtn">Yes, cancel my booking</button>
           <p class="muted" style="margin-top:12px">Prefer a different date? Cancel here, then <a href="/tours/" style="color:var(--blue)">book again</a>.</p>
@@ -213,12 +207,12 @@
 
     <!-- ============ LEAVE WAITLIST VIEW (?leave=token) ============ -->
     <main id="leaveView" class="hidden">
-      <div class="badge">Hospital tour · Hospiten Paitilla</div>
+      <div class="badge">Coffee with Hospiten Paitilla</div>
       <section class="card">
         <div id="leaveLoading" class="muted">Loading...</div>
         <div id="leaveAsk" class="hidden">
           <h2 id="leaveHello"></h2>
-          <p>Do you want to be removed from the waitlist for the <b>Hospiten Paitilla hospital tour</b>?
+          <p>Do you want to be removed from the waitlist for <b>Coffee with Hospiten Paitilla</b>?
              You will stop getting emails about new dates.</p>
           <p class="muted">If you just can't make the dates we have now, there is nothing to do: you stay on the waitlist
              and we will write again when another date opens.</p>
@@ -347,8 +341,10 @@
       }
       r.dates.forEach(function (d) {
         var lab = document.createElement('label');
-        lab.className = 'date' + (d.open ? '' : ' full');
-        var seats = d.open ? (d.seatsLeft + (d.seatsLeft === 1 ? ' seat left' : ' seats left')) : 'Full';
+        // Seat counts are never shown: only Available / Almost full / Full.
+        var av = d.availability || (!d.open ? 'full' : (d.seatsLeft <= 2 ? 'almost' : 'available'));
+        lab.className = 'date ' + av;
+        var seats = { available: 'Available', almost: 'Almost full', full: 'Full' }[av];
         lab.innerHTML = '<input type="radio" name="date"' + (d.open ? '' : ' disabled') + '>' +
           '<span class="when"></span><span class="seats"></span>';
         lab.querySelector('.when').textContent = d.label + ', ' + d.time;
@@ -383,10 +379,6 @@
     }
     loadDates();
 
-    document.querySelectorAll('input[name=companion]').forEach(function (r) {
-      r.addEventListener('change', function () { show($('companionBox'), this.value === 'yes' && this.checked); });
-    });
-
     $('bookForm').addEventListener('submit', function (e) {
       e.preventDefault();
       var f = this, msg = $('formMsg');
@@ -395,13 +387,11 @@
         reason: allFull ? 'full' : 'dates',
         dateId: selected,
         name: f.name.value.trim(), email: f.email.value.trim(), whatsapp: f.whatsapp.value.trim(),
-        companion: f.querySelector('input[name=companion]:checked').value === 'yes',
-        companionName: f.companionName.value.trim(),
+        companion: false, companionName: '',
         consent: $('consent').checked, website: f.website.value
       };
       if (!waitlist && !selected) return setMsg(msg, 'Please choose a date, or the waitlist option.', 'error');
       if (!data.name || !data.email || !data.whatsapp) return setMsg(msg, 'Please fill in your name, email and WhatsApp.', 'error');
-      if (data.companion && !data.companionName) return setMsg(msg, "Please enter your companion's name.", 'error');
       if (!data.consent) return setMsg(msg, 'Please accept the consent checkbox to continue.', 'error');
 
       var btn = $('submitBtn'), label = btn.textContent;
