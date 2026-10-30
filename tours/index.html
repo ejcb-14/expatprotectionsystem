@@ -21,8 +21,21 @@
            color: var(--ink); background: var(--bg); line-height: 1.6; }
     .page { max-width: 760px; margin: 0 auto; padding: 24px 16px 56px; }
     .site-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
-    .site-header img { width: 170px; height: auto; display: block; }
-    .site-header a.home { font-size: 0.9rem; color: var(--muted); text-decoration: none; }
+    .site-header img.eps { width: 170px; height: auto; display: block; }
+    .site-header img.hsp { height: 64px; width: auto; display: block; }
+    .hsp-name { color: #0f333d; }
+    .benefits { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 22px 22px 8px; margin-top: 20px; }
+    .benefits .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .benefits .eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1e7d4f; }
+    .benefits .top img { height: 18px; width: auto; display: block; }
+    .benefits h2 { margin: 6px 0 4px; font-size: 1.35rem; color: var(--navy); }
+    .benefits .intro { color: var(--muted); font-size: 0.95rem; margin: 0 0 14px; }
+    .benefits ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 20px; }
+    .benefits li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.93rem; padding-bottom: 12px; }
+    .benefits li b { color: var(--navy); }
+    .benefits .ck { flex: none; width: 22px; height: 22px; border-radius: 50%; background: #1e7d4f; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px; }
+    .benefits .ck svg { width: 12px; height: 12px; display: block; }
+    .site-footer .hsp-line { font-size: 0.85rem; color: var(--muted); margin: -6px 0 12px; }
     .badge { display: inline-block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
              background: var(--box); color: var(--blue); padding: 4px 10px; border-radius: 999px; margin: 20px 0 14px; }
     h1 { font-size: 2.1rem; line-height: 1.2; margin: 0 0 12px; color: #0b1120; }
@@ -100,8 +113,9 @@
     .copyright a { color: inherit; }
     @media (max-width: 560px) {
       h1 { font-size: 1.7rem; }
-      .site-header img { width: 140px; }
-      .site-header a.home { display: none; }
+      .site-header img.eps { width: 130px; }
+      .site-header img.hsp { height: 50px; }
+      .benefits ul { grid-template-columns: 1fr; }
       .card { padding: 20px 16px; }
       .contact { grid-template-columns: 1fr; }
       .contact > div + div { border-left: 0; border-top: 1px solid #bce3fd; }
@@ -111,15 +125,15 @@
 <body>
   <div class="page">
     <header class="site-header">
-      <a href="/"><img src="https://ejcb-14.github.io/adgallassets/eps-logo-crop.png" alt="Expat Protection System" /></a>
-      <a class="home" href="/">expatprotectionsystem.com</a>
+      <a href="/"><img class="eps" src="https://ejcb-14.github.io/adgallassets/eps-logo-crop.png" alt="Expat Protection System" /></a>
+      <a href="https://hospitenpaitilla.com" target="_blank" rel="noopener"><img class="hsp" src="https://ejcb-14.github.io/adgallassets/hospiten-paitilla-vertical.png" alt="Hospiten Paitilla" /></a>
     </header>
 
     <!-- ============ BOOKING VIEW ============ -->
     <main id="bookView">
       <div class="hero">
         <div class="badge">Coffee with Hospiten Paitilla · Panama City</div>
-        <h1>Get to know Hospiten Paitilla before you ever need it</h1>
+        <h1>Get to know <span class="hsp-name">Hospiten Paitilla</span> before you ever need it</h1>
         <p class="lead">
           Join a small guided tour of Hospiten Paitilla for English-speaking expats, led by the hospital's International
           Department team. You will see how the hospital works for patients like you, and we finish with a short Q&amp;A on
@@ -127,7 +141,7 @@
         </p>
         <div class="perk"><span class="ic" aria-hidden="true"><svg viewBox="0 0 20 20"><path fill="#fff"
           d="M7 1.5h6v5.5h5.5v6H13v5.5H7V13H1.5V7H7z"/></svg></span>
-          <span>During the visit you can join the <b>Hospiten Paitilla international program for free</b>, with a short Hospiten form.</span></div>
+          <span>During the visit you can join Hospiten Paitilla's <b>Expat Global Care</b> program <b>for free</b>.</span></div>
         <p class="tagline">No sales pitch. Just clear answers.</p>
       </div>
       <div class="facts">
@@ -136,6 +150,23 @@
         <div class="fact"><b>Group size</b>Up to 8 guests</div>
         <div class="fact"><b>Meet at</b>Main lobby, 8:45 a.m.</div>
       </div>
+
+      <section class="benefits" aria-labelledby="benefitsTitle">
+        <div class="top">
+          <span class="eyebrow">Free membership</span>
+          <img src="https://ejcb-14.github.io/adgallassets/hospiten-paitilla-horizontal.png" alt="Hospiten Paitilla" />
+        </div>
+        <h2 id="benefitsTitle">Expat Global Care</h2>
+        <p class="intro">During the visit you can join Hospiten Paitilla's Expat Global Care program for free, with a short form from Hospiten. The membership includes:</p>
+        <ul>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Health Navigator.</b> Dedicated professionals to guide you at every step.</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>VIP treatment.</b> Personalized attention and priority service.</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Annual preventive health check-up.</b> Included with the membership and scheduled with Hospiten after you enroll.</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Medication delivery to your home.</b> Within the Panama City metropolitan area.</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Exclusive member health fairs.</b> Health events designed for members.</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Welcome kit.</b> Given when you enroll.</span></li>
+        </ul>
+      </section>
 
       <section class="card" id="formCard">
         <h2 id="formTitle">Choose a date</h2>
@@ -167,7 +198,7 @@
           <label class="consent">
             <input type="checkbox" id="consent" name="consent" required />
             <span>I agree that Expat Protection System and ADG Seguros may share my name, email and phone number with
-              Hospiten Paitilla to organize this tour. Joining Hospiten's international program is done separately, with Hospiten's own form during the visit. See our
+              Hospiten Paitilla to organize this tour. Joining Hospiten's Expat Global Care program is done separately, with Hospiten's own form during the visit. See our
               <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>.</span>
           </label>
 
@@ -250,6 +281,7 @@
 
     <footer class="site-footer">
       <p class="reg"><strong>Expat Protection System is a service of ADG Seguros</strong></p>
+      <p class="hsp-line">Tours held at and guided by <span class="hsp-name"><b>Hospiten Paitilla</b></span></p>
       <img src="https://ejcb-14.github.io/adgallassets/ADG-regulado-PJ918.png"
            alt="Regulated and supervised by the Superintendency of Insurance and Reinsurance of Panama. License PJ 918." />
       <div class="copyright">© 2026 Gonzalo de la Guardia / ADG Seguros · <a href="/privacy-policy.html">Privacy Policy</a></div>
@@ -387,7 +419,6 @@
         reason: allFull ? 'full' : 'dates',
         dateId: selected,
         name: f.name.value.trim(), email: f.email.value.trim(), whatsapp: f.whatsapp.value.trim(),
-        companion: false, companionName: '',
         consent: $('consent').checked, website: f.website.value
       };
       if (!waitlist && !selected) return setMsg(msg, 'Please choose a date, or the waitlist option.', 'error');
