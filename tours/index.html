@@ -8,7 +8,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Coffee with Hospiten Paitilla">
   <meta property="og:description" content="A guided tour of Hospiten Paitilla in English for expats in Panama, with a short Q&A on health insurance at the end.">
-  <meta property="og:image" content="https://ejcb-14.github.io/adgallassets/eps-logo-crop.png">
+  <meta property="og:image" content="https://ejcb-14.github.io/adgallassets/hospiten-paitilla-fachada.jpg">
   <meta property="og:url" content="https://expatprotectionsystem.com/tours/">
   <link rel="icon" href="https://ejcb-14.github.io/adgallassets/eps-favicon.png" type="image/png" />
   <style>
@@ -17,6 +17,7 @@
       --line: #e2e8f0; --bg: #f8fafc; --box: #e0f2fe; --blue: #0369a1; --red: #c53030;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
            color: var(--ink); background: var(--bg); line-height: 1.6; }
     .page { max-width: 760px; margin: 0 auto; padding: 24px 16px 56px; }
@@ -43,6 +44,12 @@
     p { margin: 0 0 10px; }
     .lead { font-size: 1.05rem; color: var(--muted); max-width: 640px; }
     .hero { text-align: center; }
+    .photo { margin: 14px 0 0; border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 7; background: #dbe7ef; }
+    .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 58%; display: block; }
+    .btn.cta { display: inline-block; text-decoration: none; background: #1e7d4f; border-color: #1e7d4f; font-size: 1.05rem;
+           padding: 13px 28px; margin: 14px 0 0; }
+    .btn.cta:hover { background: #17633e; }
+    #formCard { scroll-margin-top: 16px; }
     .hero .lead { margin: 0 auto 10px; }
     .perk { display: inline-flex; align-items: center; gap: 10px; margin: 8px auto 4px; padding: 10px 16px;
             background: #e8f5ee; border: 1px solid #b7e0c8; border-radius: 12px; color: #1e5a3c; font-size: 0.98rem; text-align: left; }
@@ -115,6 +122,8 @@
       h1 { font-size: 1.7rem; }
       .site-header img.eps { width: 130px; }
       .site-header img.hsp { height: 50px; }
+      .photo { aspect-ratio: 16 / 10; }
+      .btn.cta { display: block; text-align: center; }
       .benefits ul { grid-template-columns: 1fr; }
       .card { padding: 20px 16px; }
       .contact { grid-template-columns: 1fr; }
@@ -131,6 +140,7 @@
 
     <!-- ============ BOOKING VIEW ============ -->
     <main id="bookView">
+      <figure class="photo"><img src="https://ejcb-14.github.io/adgallassets/hospiten-paitilla-fachada.jpg" alt="Hospiten Paitilla, Punta Paitilla, Panama City" width="1600" height="1222"></figure>
       <div class="hero">
         <div class="badge">Coffee with Hospiten Paitilla · Panama City</div>
         <h1>Get to know <span class="hsp-name">Hospiten Paitilla</span> before you ever need it</h1>
@@ -143,6 +153,7 @@
           d="M7 1.5h6v5.5h5.5v6H13v5.5H7V13H1.5V7H7z"/></svg></span>
           <span>During the visit you can join Hospiten Paitilla's <b>Expat Global Care</b> program <b>for free</b>.</span></div>
         <p class="tagline">No sales pitch. Just clear answers.</p>
+        <a class="btn cta" href="#formCard">Choose your date</a>
       </div>
       <div class="facts">
         <div class="fact"><b>Length</b>About 75 minutes</div>
@@ -151,22 +162,6 @@
         <div class="fact"><b>Meet at</b>Main lobby, 8:45 a.m.</div>
       </div>
 
-      <section class="benefits" aria-labelledby="benefitsTitle">
-        <div class="top">
-          <span class="eyebrow">Free membership</span>
-          <img src="https://ejcb-14.github.io/adgallassets/hospiten-paitilla-horizontal.png" alt="Hospiten Paitilla" />
-        </div>
-        <h2 id="benefitsTitle">Expat Global Care</h2>
-        <p class="intro">During the visit you can join Hospiten Paitilla's Expat Global Care program for free, with a short form from Hospiten. The membership includes:</p>
-        <ul>
-          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Health Navigator.</b> Dedicated professionals to guide you at every step.</span></li>
-          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>VIP treatment.</b> Personalized attention and priority service.</span></li>
-          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Annual preventive health check-up.</b> Included with the membership and scheduled with Hospiten after you enroll.</span></li>
-          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Medication delivery to your home.</b> Within the Panama City metropolitan area.</span></li>
-          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Exclusive member health fairs.</b> Health events designed for members.</span></li>
-          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Welcome kit.</b> Given when you enroll.</span></li>
-        </ul>
-      </section>
 
       <section class="card" id="formCard">
         <h2 id="formTitle">Choose a date</h2>
@@ -207,11 +202,29 @@
         </form>
       </section>
 
+
       <section class="card done hidden" id="doneCard">
         <h2 id="doneTitle">You are booked</h2>
         <p id="doneText"></p>
         <p class="muted hidden" id="doneWaitNote">Further dates are not guaranteed.</p>
         <p class="muted">Check your inbox (and spam folder) for the confirmation email from tours@expatprotectionsystem.com.</p>
+      </section>
+
+      <section class="benefits" aria-labelledby="benefitsTitle">
+        <div class="top">
+          <span class="eyebrow">Free membership</span>
+          <img src="https://ejcb-14.github.io/adgallassets/hospiten-paitilla-horizontal.png" alt="Hospiten Paitilla" />
+        </div>
+        <h2 id="benefitsTitle">Expat Global Care</h2>
+        <p class="intro">During the visit you can join Hospiten Paitilla's Expat Global Care program for free, with a short form from Hospiten. The membership includes:</p>
+        <ul>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Health Navigator.</b> Dedicated professionals to guide you at every step.</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>VIP treatment.</b> Personalized attention and priority service.</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Annual preventive health check-up.</b> Included with the membership and scheduled with Hospiten after you enroll.</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Medication delivery to your home.</b> Within the Panama City metropolitan area.</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Exclusive member health fairs.</b> Health events designed for members.</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Welcome kit.</b> Given when you enroll.</span></li>
+        </ul>
       </section>
     </main>
 
@@ -419,7 +432,8 @@
         reason: allFull ? 'full' : 'dates',
         dateId: selected,
         name: f.name.value.trim(), email: f.email.value.trim(), whatsapp: f.whatsapp.value.trim(),
-        consent: $('consent').checked, website: f.website.value
+        consent: $('consent').checked, website: f.website.value,
+        src: (params.get('src') || '').slice(0, 20)
       };
       if (!waitlist && !selected) return setMsg(msg, 'Please choose a date, or the waitlist option.', 'error');
       if (!data.name || !data.email || !data.whatsapp) return setMsg(msg, 'Please fill in your name, email and WhatsApp.', 'error');
