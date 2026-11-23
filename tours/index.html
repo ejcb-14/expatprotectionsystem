@@ -71,6 +71,9 @@
     .date.selected { border-color: var(--navy); background: var(--box); box-shadow: 0 0 0 1px var(--navy) inset; }
     .date.full { cursor: default; opacity: 0.55; }
     .date.full .seats { color: var(--red); font-weight: 600; }
+    .date.done { cursor: default; opacity: 0.55; background: #f7f8fa; }
+    .date.done .when { text-decoration: line-through; color: var(--soft); }
+    .date.done .seats { color: var(--soft); font-weight: 600; }
     .date.almost .seats { color: #b45309; font-weight: 600; }
     .date.available .seats { color: #1e7d4f; font-weight: 600; }
     .tagline { margin: 14px 0 0; font-weight: 700; color: var(--navy); letter-spacing: 0.01em; }
@@ -424,7 +427,7 @@
         // Seat counts are never shown: only Available / Almost full / Full.
         var av = d.availability || (!d.open ? 'full' : (d.seatsLeft <= 2 ? 'almost' : 'available'));
         lab.className = 'date ' + av;
-        var seats = { available: 'Available', almost: 'Almost full', full: 'Full' }[av];
+        var seats = { available: 'Available', almost: 'Almost full', full: 'Full', done: 'Completed' }[av] || 'Full';
         lab.innerHTML = '<input type="radio" name="date"' + (d.open ? '' : ' disabled') + '>' +
           '<span class="when"></span><span class="seats"></span>';
         lab.querySelector('.when').textContent = d.label + ', ' + d.time;
