@@ -109,6 +109,7 @@
     .msg { display: none; margin-top: 14px; padding: 12px 14px; border-radius: 10px; font-size: 0.95rem; }
     .msg.error { display: block; background: #fff5f5; color: #9b2c2c; border: 1px solid #fed7d7; }
     .msg.ok { display: block; background: var(--box); color: var(--navy); border-left: 4px solid var(--navy); }
+    .msg.full { display: block; background: #fdecec; color: #7f1d1d; border-left: 4px solid var(--red); }
     .hidden { display: none !important; }
     .muted { color: var(--soft); font-size: 0.9rem; }
     .done h2 { margin: -24px -22px 18px; padding: 16px 22px; border-radius: 12px 12px 0 0; color: #fff; background: var(--navy); }
@@ -179,7 +180,7 @@
         <div id="datesBox" class="dates" role="radiogroup" aria-labelledby="formTitle">
           <p class="muted" id="datesLoading">Loading available dates...</p>
         </div>
-        <div id="waitlistNote" class="msg ok hidden">
+        <div id="waitlistNote" class="msg full hidden">
           All upcoming dates are full. Join the waitlist and we will email you in case more dates open.
           Further dates are not guaranteed.
         </div>
