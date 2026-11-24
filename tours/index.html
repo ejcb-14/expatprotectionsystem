@@ -418,11 +418,7 @@
     function renderDates(r) {
       var box = $('datesBox'); box.innerHTML = '';
       allFull = r.allFull;
-      if (allFull) {
-        show(box, false); show($('waitlistNote'), true);
-        setMode(true);
-        return;
-      }
+      show($('waitlistNote'), allFull);
       r.dates.forEach(function (d) {
         var lab = document.createElement('label');
         // Seat counts are never shown: only Available / Almost full / Full.
@@ -441,6 +437,9 @@
         });
         box.appendChild(lab);
       });
+      // All full: past and full dates stay visible (greyed out) above the note, and the form is the waitlist.
+      if (allFull) { show(box, r.dates.length > 0); setMode(true); return; }
+      show(box, true);
       var wl = document.createElement('label');
       wl.className = 'date wl';
       wl.innerHTML = '<input type="radio" name="date" value="waitlist"><span class="when">None of these dates work for me</span>' +
